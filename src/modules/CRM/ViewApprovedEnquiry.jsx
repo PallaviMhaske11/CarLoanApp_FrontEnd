@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function ViewApprovedEnquiry() 
 {
-   const [customers,setCustomers]=useState([])
+   const [customers,setCustomers]=useState([]);
+   const navigate = useNavigate();
    
                const getCustomers=()=>{
                    axios.get('http://localhost:9091/api/enquiry/getapprovedenquiry').then(
@@ -17,6 +18,12 @@ function ViewApprovedEnquiry()
                }
    
                useEffect(getCustomers,[])
+
+               function applyForLoan(customerId) {
+
+                alert("Apply for Loan : " +customerId);
+                navigate("/dashboard/registerform");
+               }
   return (
     // <div>ViewApprovedEnquiry</div>
 
@@ -47,7 +54,7 @@ function ViewApprovedEnquiry()
                                                           <td>{c.mobileNo}</td>
                                                           <td>{c.pancardNo}</td>
                                                           
-                                                          <td><button className='btn btn-danger' onClick={()=>(c.customerId)}>Apply for loan</button>
+                                                          <td><button className='btn btn-danger' onClick={()=>applyForLoan(c.customerId)}>Apply for loan</button>
                                                          
                                                           </td>
                                     </tr>)

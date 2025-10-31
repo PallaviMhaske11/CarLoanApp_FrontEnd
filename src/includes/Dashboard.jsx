@@ -3,10 +3,11 @@ import CheckCibil from '../modules/OE/CheckCibil';
 import RegisterEnquiry from '../modules/CRM/RegisterEnquiry';
 import ProfileNav from './ProfileNav';
 import SideNav from './SideNav';
-import Register from '../Templates/Register';
+
 import ForwardtoOE from '../modules/CRM/ForwardtoOE';
 import ViewApprovedEnquiry from '../modules/CRM/ViewApprovedEnquiry';
 import ViewPendingEnquiry from '../modules/CRM/ViewPendingEnquiry';
+import MultistepForm from '../RegisterForm/MultiStepForm'
 
 function Dashboard() 
 {
@@ -24,6 +25,7 @@ function Dashboard()
       {path:'/forwordtoOe', component:<ForwardtoOE></ForwardtoOE>},
       {path:'/viewapproved-enquiry', component:<ViewApprovedEnquiry></ViewApprovedEnquiry>},
       {path:'/viewpending-enquiry', component:<ViewPendingEnquiry></ViewPendingEnquiry>},
+      {path:'/registerform',component:<MultistepForm></MultistepForm>}
     ]
   }  
   
