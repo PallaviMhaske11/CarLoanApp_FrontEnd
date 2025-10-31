@@ -18,7 +18,6 @@ function RegisterEnquiry()
                               alert("Details Added..");
                               reset();
                               navigate('/viewenquiry');
-
                             }
                            }
 
